@@ -1,16 +1,37 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-    <title>Grid Title</title>
-    <link rel="stylesheet" type="text/css" href="styles.css"/>
+    <title></title>
+    <script type="text/javascript">
+        var position = 0;
+        var cars = ["2.png", '3.png', '4.png', '5.png', '6.png', '7.png', '8.png', '1.png'];
+        setInterval(function() {
+        	position++;
+            var imgObject = document.getElementById("myImage");
+            imgObject.src = cars[position];
+            if (position == 7) {
+                position = 0;
+            }
+            var left = imgObject.style.left;
+            var newleft = (parseInt(left) + 10) + "px";
+            if (newleft == 1100+'px') {
+            	newleft = 0+'px';
+            }
+             imgObject.style.left = newleft;
+            // if (position % 2 == 0) {
+            // 	imgObject.style.top = '56px';
+            // }
+            // else{
+            // 	imgObject.style.top= '200px';
+            // }
+        }, 5);
+    </script>
 </head>
+
 <body>
-    <div class="grid-container">
-       <div class="header">Header</div>
-       <div class="main-bar">Main Bar</div>
-       <div class="menu">Menu</div>
-       <div class="content">Content</div>
-       <div class="footer">Footer</div>
-    </div>
+	<img src="">
+    <img id='myImage' src="1.png" style="position: absolute; left: 0px;"></br>
 </body>
+
 </html>
